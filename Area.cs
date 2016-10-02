@@ -62,7 +62,7 @@ namespace Adventure
             for(int i = 0; i < bodies.Count; i++)
             {
                 var bodarray = bodies.ToArray();
-                bodarray[i].Key.pos += bodarray[i].Value.GetLinearVelocity() * Adventure.physicsScale;
+                bodarray[i].Key.pos = bodarray[i].Value.GetPosition() * Adventure.tilesize;
                 Vector2 pos = bodarray[i].Value.GetPosition();
                 int foo = 0;
             }

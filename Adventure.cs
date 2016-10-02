@@ -35,7 +35,7 @@ namespace Adventure
         /*Constants*/
         public static int pxlratio = 2;
         public const int tilesize = 32;
-        public const float physicsScale = 0.1f;
+        public const int framerate = 60;
         /*Constants*/
         public Adventure()
         {

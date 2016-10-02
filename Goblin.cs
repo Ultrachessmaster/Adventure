@@ -11,18 +11,19 @@ namespace Adventure
         public Goblin (Vector2 pos)
         {
             this.pos = pos;
-            Tex = Adventure.CM.Load<Texture2D>("goblin_sprites/goblin_down_spr_0");
+            Tex = Adventure.CM.Load<Texture2D>("color_sprites/blue_spr_0");
             update = Upd;
             draw = Drw;
 
             BodyDef bd = new BodyDef();
-            bd.Position.Set(pos.X / Adventure.physicsScale, pos.Y / Adventure.physicsScale);
+            bd.Position.Set(pos.X / Adventure.tilesize, pos.Y / Adventure.tilesize);
             body = Adventure.Area.AddBody(bd, this);
 
             PolygonDef sd = new PolygonDef();
-            sd.Density = 0f;
+            sd.Density = 1f;
             sd.Friction = 0;
-            sd.SetAsBox(1f, 1f);
+            float size = 1f / 2f;
+            sd.SetAsBox(size, size);
             body.CreateFixture(sd);
             body.SetMassFromShapes();
         }
@@ -33,7 +34,7 @@ namespace Adventure
             if(goal != Vector2.Zero)
                 goal.Normalize();
             goal = goal / 1.2f;
-            pos += goal;
+            body.SetLinearVelocity(goal);
 
         }
     }
