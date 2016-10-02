@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D3F2E9BE-9164-41B7-9FFC-7FB3CBD66349}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Adventure</RootNamespace>
+    <AssemblyName>Adventure</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MonoGamePlatform>Windows</MonoGamePlatform>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Adventure.cs" />
+    <Compile Include="Animation.cs" />
+    <Compile Include="Area.cs" />
+    <Compile Include="Box2DXDebug.cs" />
+    <Compile Include="Collision\BroadPhase.cs" />
+    <Compile Include="Collision\Collision.CollideCircle.cs" />
+    <Compile Include="Collision\Collision.CollideEdge.cs" />
+    <Compile Include="Collision\Collision.CollidePoly.cs" />
+    <Compile Include="Collision\Collision.cs" />
+    <Compile Include="Collision\Collision.Distance.cs" />
+    <Compile Include="Collision\Collision.TimeOfImpact.cs" />
+    <Compile Include="Collision\PairManager.cs" />
+    <Compile Include="Collision\Shapes\CircleShape.cs" />
+    <Compile Include="Collision\Shapes\EdgeShape.cs" />
+    <Compile Include="Collision\Shapes\PolygonShape.cs" />
+    <Compile Include="Collision\Shapes\Shape.cs" />
+    <Compile Include="Common\Mat22.cs" />
+    <Compile Include="Common\Mat33.cs" />
+    <Compile Include="Common\Math.cs" />
+    <Compile Include="Common\Settings.cs" />
+    <Compile Include="Common\Sweep.cs" />
+    <Compile Include="Common\Vec2.cs" />
+    <Compile Include="Common\Vec3.cs" />
+    <Compile Include="Common\XForm.cs" />
+    <Compile Include="Dynamics\Body.cs" />
+    <Compile Include="Dynamics\ContactManager.cs" />
+    <Compile Include="Dynamics\Contacts\CircleContact.cs" />
+    <Compile Include="Dynamics\Contacts\Contact.cs" />
+    <Compile Include="Dynamics\Contacts\ContactSolver.cs" />
+    <Compile Include="Dynamics\Contacts\EdgeAndCircleContact.cs" />
+    <Compile Include="Dynamics\Contacts\NullContact.cs" />
+    <Compile Include="Dynamics\Contacts\PolyAndCircleContact.cs" />
+    <Compile Include="Dynamics\Contacts\PolyAndEdgeContact.cs" />
+    <Compile Include="Dynamics\Contacts\PolyContact.cs" />
+    <Compile Include="Dynamics\Controllers\BuoyancyController.cs" />
+    <Compile Include="Dynamics\Controllers\ConstantAccelController.cs" />
+    <Compile Include="Dynamics\Controllers\ConstantForceController.cs" />
+    <Compile Include="Dynamics\Controllers\Controller.cs" />
+    <Compile Include="Dynamics\Controllers\GravityController.cs" />
+    <Compile Include="Dynamics\Controllers\TensorDampingController.cs" />
+    <Compile Include="Dynamics\Fixture.cs" />
+    <Compile Include="Dynamics\Island.cs" />
+    <Compile Include="Dynamics\Joints\DistanceJoint.cs" />
+    <Compile Include="Dynamics\Joints\GearJoint.cs" />
+    <Compile Include="Dynamics\Joints\Joint.cs" />
+    <Compile Include="Dynamics\Joints\LineJoint.cs" />
+    <Compile Include="Dynamics\Joints\MouseJoint.cs" />
+    <Compile Include="Dynamics\Joints\PrismaticJoint.cs" />
+    <Compile Include="Dynamics\Joints\PulleyJoint.cs" />
+    <Compile Include="Dynamics\Joints\RevoluteJoint.cs" />
+    <Compile Include="Dynamics\World.cs" />
+    <Compile Include="Dynamics\WorldCallbacks.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Goblin.cs" />
+    <Compile Include="Input.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaticExtension.cs" />
+    <Compile Include="Tile.cs" />
+    <Compile Include="Timer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bed_spr_0.png" />
+    <Content Include="Content\blue_spr_0.png" />
+    <Content Include="Content\dirt_spr_0.png" />
+    <Content Include="Content\downright_hb_0.png" />
+    <Content Include="Content\fence_post.png" />
+    <Content Include="Content\four_px_wide_hb_0.png" />
+    <Content Include="Content\goblin_down_spr_0.png" />
+    <Content Include="Content\goblin_down_spr_1.png" />
+    <Content Include="Content\goblin_spr_0.png" />
+    <Content Include="Content\goblin_up_spr_0.png" />
+    <Content Include="Content\goblin_up_spr_1.png" />
+    <Content Include="Content\grass_spr_0.png" />
+    <Content Include="Content\green_spr_0.png" />
+    <Content Include="Content\locked_wall_spr_0.png" />
+    <Content Include="Content\mushromp_spr_0.png" />
+    <Content Include="Content\mushromp_spr_1.png" />
+    <Content Include="Content\ninja_spr_0.png" />
+    <Content Include="Content\ninja_spr_1.png" />
+    <Content Include="Content\ninja_star_spr_0.png" />
+    <Content Include="Content\ninja_star_spr_1.png" />
+    <Content Include="Content\pillow_spr_0.png" />
+    <Content Include="Content\player_down_still_spr_0.png" />
+    <Content Include="Content\player_down_still_spr_1.png" />
+    <Content Include="Content\player_down_still_spr_2.png" />
+    <Content Include="Content\player_down_still_spr_3.png" />
+    <Content Include="Content\player_side_still_spr_0.png" />
+    <Content Include="Content\player_side_still_spr_1.png" />
+    <Content Include="Content\player_side_still_spr_2.png" />
+    <Content Include="Content\player_side_still_spr_3.png" />
+    <Content Include="Content\player_spr_0.png" />
+    <Content Include="Content\player_spr_1.png" />
+    <Content Include="Content\player_still_down_spr_0.png" />
+    <Content Include="Content\player_still_down_spr_1.png" />
+    <Content Include="Content\player_still_down_spr_2.png" />
+    <Content Include="Content\player_still_down_spr_3.png" />
+    <Content Include="Content\player_still_side_spr_0.png" />
+    <Content Include="Content\player_still_side_spr_1.png" />
+    <Content Include="Content\player_still_spr_0.png" />
+    <Content Include="Content\player_still_spr_1.png" />
+    <Content Include="Content\player_still_spr_2.png" />
+    <Content Include="Content\player_still_spr_3.png" />
+    <Content Include="Content\player_walk_down_spr_0.png" />
+    <Content Include="Content\player_walk_down_spr_1.png" />
+    <Content Include="Content\player_walk_down_spr_2.png" />
+    <Content Include="Content\player_walk_down_spr_3.png" />
+    <Content Include="Content\player_walk_side_0.png" />
+    <Content Include="Content\player_walk_side_1.png" />
+    <Content Include="Content\player_walk_side_2.png" />
+    <Content Include="Content\player_walk_side_3.png" />
+    <Content Include="Content\player_walk_side_spr_0.png" />
+    <Content Include="Content\player_walk_side_spr_1.png" />
+    <Content Include="Content\player_walk_side_spr_2.png" />
+    <Content Include="Content\player_walk_side_spr_3.png" />
+    <Content Include="Content\porch_spr_0.png" />
+    <Content Include="Content\single_line_hitbox_0.png" />
+    <Content Include="Content\single_tile_hitbox_0.png" />
+    <Content Include="Content\sling_rock_spr_0.png" />
+    <Content Include="Content\sprite26_0.png" />
+    <Content Include="Content\sprite26_1.png" />
+    <Content Include="Content\sprite29_0.png" />
+    <Content Include="Content\sprite29_1.png" />
+    <Content Include="Content\sprite4_0.png" />
+    <Content Include="Content\sprite5_0.png" />
+    <Content Include="Content\sprite6_0.png" />
+    <Content Include="Content\sword_0.png" />
+    <Content Include="Content\sword_1.png" />
+    <Content Include="Content\sword_2.png" />
+    <Content Include="Content\sword_down_spr_0.png" />
+    <Content Include="Content\sword_down_spr_1.png" />
+    <Content Include="Content\sword_down_spr_2.png" />
+    <Content Include="Content\sword_left_spr_0.png" />
+    <Content Include="Content\sword_left_spr_1.png" />
+    <Content Include="Content\sword_left_spr_2.png" />
+    <Content Include="Content\sword_right_spr_0.png" />
+    <Content Include="Content\sword_right_spr_1.png" />
+    <Content Include="Content\sword_right_spr_2.png" />
+    <Content Include="Content\sword_spr_0.png" />
+    <Content Include="Content\sword_spr_1.png" />
+    <Content Include="Content\sword_spr_2.png" />
+    <Content Include="Content\sword_up_spr_0.png" />
+    <Content Include="Content\sword_up_spr_1.png" />
+    <Content Include="Content\sword_up_spr_2.png" />
+    <Content Include="Content\sword_up_spr_3.png" />
+    <Content Include="Content\sword_up_spr_4.png" />
+    <Content Include="Content\teleport_spr_0.png" />
+    <Content Include="Content\thing_tileset.png" />
+    <Content Include="Content\tree_spr_0.png" />
+    <Content Include="Content\yellow_spr_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Adventure_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\color_sprites\" />
+    <Folder Include="Content\goblin_sprites\" />
+    <Folder Include="Content\mushroom_sprites\" />
+    <Folder Include="Content\ninja_sprites\" />
+    <Folder Include="Content\obj\" />
+    <Folder Include="Content\player_sprites\" />
+    <Folder Include="Content\sword_sprites\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
